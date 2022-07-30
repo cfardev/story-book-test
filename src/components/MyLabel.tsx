@@ -26,6 +26,8 @@ interface MyLabelProps {
    * Custom Color
    */
   fontColor?: string;
+
+  backgroundColor?: string;
 }
 
 const MyLabel = ({
@@ -34,12 +36,14 @@ const MyLabel = ({
   allCaps = false,
   color = "primary",
   fontColor,
+  backgroundColor = "transparent",
 }: MyLabelProps) => {
   return (
     <span
       className={`label ${size} text-${color} ${allCaps && "allCaps"}`}
       style={{
         color: fontColor,
+        backgroundColor,
       }}
     >
       {label}
